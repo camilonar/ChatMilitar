@@ -13,6 +13,7 @@ public abstract class Servidor {
     
     
     public void enviarMensaje(String destinatario, String mensaje){
+        encriptar(mensaje);
     }
     
     private String encriptar(String mensaje){
