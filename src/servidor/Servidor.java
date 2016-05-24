@@ -9,6 +9,14 @@ package servidor;
  *
  * @author SINFO
  */
-public class Servidor {
+public abstract class Servidor {
+    
+    
+    public void enviarMensaje(String destinatario, String mensaje){
+    }
+    
+    private String encriptar(String mensaje){
+        return mensaje;
+    }
     
 }
