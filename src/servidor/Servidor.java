@@ -12,8 +12,6 @@ import java.util.ArrayList;
  * @author SINFO
  */
 public abstract class Servidor {
-    
-    ArrayList<String> clientes = new ArrayList<>();
             
     public void enviarMensaje(String destinatario, String mensaje){
         encriptar(mensaje);
