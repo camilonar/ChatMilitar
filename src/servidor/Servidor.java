@@ -5,8 +5,6 @@
  */
 package servidor;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author SINFO
