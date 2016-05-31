@@ -23,7 +23,7 @@ public class ClienteRmiConcreteLocal extends SubjectGUI implements IConexionClie
     @Override
     public boolean recibirMsj(Mensaje msj) {
         System.out.println(msj);
-        
+        this.notificar();
         return true;
     }
 

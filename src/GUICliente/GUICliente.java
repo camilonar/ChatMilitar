@@ -22,6 +22,7 @@ public class GUICliente extends javax.swing.JFrame implements ObserverGUI{
         initComponents();
         clientermi.ClienteRmiConcreteLocal cliente = new ClienteRmiConcreteLocal();
         cliente.asociarObservador(this);
+        cliente.conectar("", 23);
     }
 
     /**
