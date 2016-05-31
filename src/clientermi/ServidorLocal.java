@@ -23,7 +23,7 @@ public class ServidorLocal{
     return true;
     }
     public String enviarMensaje(String mensaje , ClienteRmiConcreteLocal c ){
-        c.RecibirMensaje("Servidor recibio: "+mensaje);  
+        c.recibirMsj("Servidor recibio: "+mensaje);  
         return mensaje;
     }
     

@@ -32,7 +32,7 @@ public class ClienteRMI {
         server.enviarMensaje("holi4", cliente1);
         server.enviarMensaje("holi5", cliente1);
         
-        cliente1.EnviarMensaje( new MensajeLocal("Hola servidor :v"));
+        cliente1.enviarMsj(new MensajeLocal("Hola servidor :v"));
         
         
         

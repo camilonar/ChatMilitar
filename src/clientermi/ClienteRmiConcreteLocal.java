@@ -8,17 +8,17 @@ package clientermi;
  *
  * @author IPET
  */
-public class ClienteRmiConcreteLocal extends Subject implements ClienteInterfaz  {
+public class ClienteRmiConcreteLocal extends Subject implements IConexioncliente  {
     ServidorLocal miservidor;
     
     
     @Override
-    public boolean ConectarseAlServer() {
+    public boolean conectar() {
         return true;
     }
 
     @Override
-    public boolean RecibirMensaje(String mensaje) {
+    public boolean recibirMsj(String mensaje) {
         System.out.println(mensaje);
         this.notificaraTodos();
         return true;
@@ -26,12 +26,12 @@ public class ClienteRmiConcreteLocal extends Subject implements ClienteInterfaz 
 
   
     @Override
-    public void DesconectarServer() {
+    public void desconectar() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean EnviarMensaje(Mensaje mensaje) {
+    public boolean enviarMsj(Mensaje mensaje) {
         miservidor.RecibirMensaje("Cliente recibio : " +mensaje.toString());
         return true;
     }

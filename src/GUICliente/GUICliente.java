@@ -141,6 +141,6 @@ public class GUICliente extends javax.swing.JFrame implements Observer{
 
     @Override
     public void notificar() {
-        
+      
     }
 }
