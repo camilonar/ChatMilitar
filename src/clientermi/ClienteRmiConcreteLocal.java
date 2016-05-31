@@ -4,6 +4,9 @@
  */
 package clientermi;
 
+import cliente.Mensaje;
+import cliente.IConexionCliente;
+
 /**
  *
  * @author IPET

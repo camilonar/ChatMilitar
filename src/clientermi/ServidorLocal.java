@@ -5,6 +5,7 @@
  */
 package clientermi;
 
+import cliente.MensajeLocal;
 import java.util.ArrayList;
 
 /**

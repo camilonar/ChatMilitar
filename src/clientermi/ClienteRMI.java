@@ -4,6 +4,8 @@
  */
 package clientermi;
 
+import cliente.MensajeLocal;
+
 /**
  *
  * @author IPET

@@ -5,7 +5,7 @@
  */
 package observer;
 
-import clientermi.IConexionCliente;
+import cliente.IConexionCliente;
 
 /**
  *
