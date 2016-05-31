@@ -3,43 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor;
+package observer;
 
-import observer.Observado;
-import observer.Observador;
+import java.util.ArrayList;
+import servidor.IconexionServidor;
 
 /**
  *
  * @author SINFO
  */
-public abstract class Servidor implements Observado{
-            
+public abstract class ServidorChat implements IconexionServidor{
     
-    @Override
+  
+    private ArrayList<Observador> misObservadores = new ArrayList<>();
+    
     public void asociarObservador(Observador o){
         misObservadores.add(o);
     }
     
-    @Override
     public void retirarObservador(Observador o){
         for (int i = 0; i < misObservadores.size(); i++) {
             misObservadores.remove(o);
         }
     }
     
-    @Override
     public void notificar(){
         for (int i = 0; i < misObservadores.size(); i++) {
             misObservadores.get(i).actualizar();
         }
-    }
-    
-    public void enviarMensaje(String destinatario, String mensaje){
-        encriptar(mensaje);
-    }
-    
-    private String encriptar(String mensaje){
-        return mensaje;
     }
     
 }
