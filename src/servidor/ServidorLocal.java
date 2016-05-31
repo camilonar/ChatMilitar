@@ -5,7 +5,7 @@
  */
 package servidor;
 
-import observer.Observador;
+import observer.ClienteChat;
 import observer.ServidorChat;
 
 /**

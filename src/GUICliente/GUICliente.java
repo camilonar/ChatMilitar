@@ -5,13 +5,12 @@
  */
 package GUICliente;
 
-import clientermi.Observer;
 
 /**
  *
  * @author IPET
  */
-public class GUICliente extends javax.swing.JFrame implements Observer{
+public class GUICliente extends javax.swing.JFrame {
 
     /**
      * Creates new form GUICliente
@@ -139,8 +138,5 @@ public class GUICliente extends javax.swing.JFrame implements Observer{
     private javax.swing.JTextArea txtAreaChat;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void notificar() {
-      
-    }
+    
 }

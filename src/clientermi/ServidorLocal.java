@@ -23,9 +23,10 @@ public class ServidorLocal{
     return true;
     }
     public String enviarMensaje(String mensaje , ClienteRmiConcreteLocal c ){
-        c.recibirMsj("Servidor recibio: "+mensaje);  
+        c.recibirMsj(new MensajeLocal ("Servidor recibio: "+mensaje));  
         return mensaje;
     }
+    
     
      public boolean RecibirMensaje(String mensaje) {
         System.out.println(mensaje.toString());

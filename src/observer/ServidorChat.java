@@ -15,13 +15,13 @@ import servidor.IconexionServidor;
 public abstract class ServidorChat implements IconexionServidor{
     
   
-    private ArrayList<Observador> misObservadores = new ArrayList<>();
+    private ArrayList<ClienteChat> misObservadores = new ArrayList<>();
     
-    public void asociarObservador(Observador o){
+    public void asociarObservador(ClienteChat o){
         misObservadores.add(o);
     }
     
-    public void retirarObservador(Observador o){
+    public void retirarObservador(ClienteChat o){
         for (int i = 0; i < misObservadores.size(); i++) {
             misObservadores.remove(o);
         }

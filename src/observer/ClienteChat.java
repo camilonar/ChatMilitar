@@ -5,11 +5,15 @@
  */
 package observer;
 
+import clientermi.IConexionCliente;
+
 /**
  *
  * @author SINFO
  */
-public interface Observador {
+public abstract class  ClienteChat implements IConexionCliente{
     
-    public void actualizar();
+    public abstract void actualizar();
+    
+    
 }

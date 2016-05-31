@@ -8,19 +8,19 @@ package clientermi;
  *
  * @author IPET
  */
-public class ClienteRmiConcreteLocal extends Subject implements IConexioncliente  {
+public class ClienteRmiConcreteLocal  implements IConexionCliente  {
     ServidorLocal miservidor;
     
     
     @Override
-    public boolean conectar() {
+    public boolean conectar(String ip , int puerto) {
         return true;
     }
 
     @Override
-    public boolean recibirMsj(String mensaje) {
-        System.out.println(mensaje);
-        this.notificaraTodos();
+    public boolean recibirMsj(Mensaje msj) {
+        System.out.println(msj);
+        
         return true;
     }
 
