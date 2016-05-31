@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soporteComunicacion.rmicom;
-
-import java.rmi.RemoteException;
+package cliente;
 
 /**
  *
  * @author IPET
  */
-public class Test extends RemoteException{
+public abstract class MiCliente {
+    
+    public abstract void saludar();
+        
+         
+    
     
 }
