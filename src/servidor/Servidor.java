@@ -5,12 +5,35 @@
  */
 package servidor;
 
+import observer.Observado;
+import observer.Observador;
+
 /**
  *
  * @author SINFO
  */
-public abstract class Servidor {
+public abstract class Servidor implements Observado{
             
+    
+    @Override
+    public void asociarObservador(Observador o){
+        misObservadores.add(o);
+    }
+    
+    @Override
+    public void retirarObservador(Observador o){
+        for (int i = 0; i < misObservadores.size(); i++) {
+            misObservadores.remove(o);
+        }
+    }
+    
+    @Override
+    public void notificar(){
+        for (int i = 0; i < misObservadores.size(); i++) {
+            misObservadores.get(i).actualizar();
+        }
+    }
+    
     public void enviarMensaje(String destinatario, String mensaje){
         encriptar(mensaje);
     }

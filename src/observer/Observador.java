@@ -9,7 +9,7 @@ package observer;
  *
  * @author SINFO
  */
-public abstract class Observador {
+public interface Observador {
     
-    public void actualizar(){ }
+    public void actualizar();
 }

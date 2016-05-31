@@ -11,24 +11,15 @@ import java.util.ArrayList;
  *
  * @author SINFO
  */
-public abstract class Observado {
+public interface Observado {
     
-    private ArrayList<Observador> misObservadores = new ArrayList<>();
+  
+    ArrayList<Observador> misObservadores = new ArrayList<>();
     
-    public void asociarObservador(Observador o){
-        misObservadores.add(o);
-    }
+    public void asociarObservador(Observador o);
     
-    public void retirarObservador(Observador o){
-        for (int i = 0; i < misObservadores.size(); i++) {
-            misObservadores.remove(o);
-        }
-    }
+    public void retirarObservador(Observador o);
     
-    public void notificar(){
-        for (int i = 0; i < misObservadores.size(); i++) {
-            misObservadores.get(i).actualizar();
-        }
-    }
+    public void notificar();
     
 }
