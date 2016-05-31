@@ -20,6 +20,7 @@ public class ClienteRmiConcreteLocal extends Subject implements ClienteInterfaz 
     @Override
     public boolean RecibirMensaje(String mensaje) {
         System.out.println(mensaje);
+        this.notificaraTodos();
         return true;
     }
 
