@@ -11,7 +11,7 @@ import cliente.IConexionCliente;
  *
  * @author IPET
  */
-public class ClienteRmiConcreteLocal  implements IConexionCliente  {
+public class ClienteRmiConcreteLocal extends SubjectGUI implements IConexionCliente  {
     ServidorLocal miservidor;
     
     

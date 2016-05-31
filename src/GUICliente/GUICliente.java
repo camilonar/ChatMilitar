@@ -5,18 +5,23 @@
  */
 package GUICliente;
 
+import clientermi.ClienteRmiConcreteLocal;
+import clientermi.ObserverGUI;
+
 
 /**
  *
  * @author IPET
  */
-public class GUICliente extends javax.swing.JFrame {
-
+public class GUICliente extends javax.swing.JFrame implements ObserverGUI{
+    
     /**
      * Creates new form GUICliente
      */
     public GUICliente() {
         initComponents();
+        clientermi.ClienteRmiConcreteLocal cliente = new ClienteRmiConcreteLocal();
+        cliente.asociarObservador(this);
     }
 
     /**
@@ -137,6 +142,11 @@ public class GUICliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextArea txtAreaChat;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizar() {
+        
+    }
 
     
 }
