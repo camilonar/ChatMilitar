@@ -5,6 +5,8 @@
  */
 package servidor;
 
+import cliente.IConexionCliente;
+
 /**
  *
  * @author SINFO
