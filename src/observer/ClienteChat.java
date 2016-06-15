@@ -6,14 +6,15 @@
 package observer;
 
 import cliente.IConexionCliente;
+import cliente.Mensaje;
 
 /**
  *
  * @author SINFO
  */
-public abstract class  ClienteChat implements IConexionCliente{
+public abstract class  ClienteChat extends Thread implements IConexionCliente{
     
-    public abstract void actualizar();
+    public abstract void actualizar(Mensaje m);
     
     
 }

@@ -5,6 +5,7 @@
  */
 package observer;
 
+import cliente.Mensaje;
 import java.util.ArrayList;
 import servidor.IconexionServidor;
 
@@ -27,9 +28,9 @@ public abstract class ServidorChat implements IconexionServidor{
         }
     }
     
-    public void notificar(){
+    public void notificar(Mensaje m){
         for (int i = 0; i < misObservadores.size(); i++) {
-            misObservadores.get(i).actualizar();
+            misObservadores.get(i).actualizar(m);
         }
     }
     

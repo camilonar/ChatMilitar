@@ -8,6 +8,7 @@ package cliente;
  *
  * @author IPET
  */
+
 public interface IConexionCliente  {
     public boolean conectar(String ip,int puerto);
     public boolean recibirMsj(Mensaje msj );
