@@ -1,22 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package servidor;
-
+package Servidor;
 import cliente.IConexionCliente;
+import java.rmi.*;
 
 /**
- *
- * @author SINFO
+ * This interface extends the class Remote and specifies the remote accessible 
+ * methods login and broadcast, which can be accessed externally. 
+ * @autor Matthias Braunhofer
  */
-public interface IconexionServidor {
-    
-    public void recibirMensaje(String mensaje);
-    public void addCliente(IConexionCliente c);
-    public void removerCliente(IConexionCliente c);
-    public void enviarMensajeAll(String mensaje);
-    public void recibirConexiones();
-    
+public interface IconexionServidor extends Remote {
+
+	public void login(IConexionCliente client, String userName) throws RemoteException;
+	
+	public void enviarMensaje(String mensaje, String userName) throws RemoteException;
 }
+
