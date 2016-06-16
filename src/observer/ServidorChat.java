@@ -7,7 +7,7 @@ package observer;
 
 import cliente.Mensaje;
 import java.util.ArrayList;
-import servidor.IconexionServidor;
+import Servidor.IconexionServidor;
 
 /**
  *
