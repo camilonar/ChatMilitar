@@ -1,29 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servidor;
 
-import cliente.*;
-import cliente.ClienteLocal;
 import cliente.IConexionCliente;
-import cliente.Mensaje;
 import cliente.MensajeLocal;
-import java.util.ArrayList;
 import observer.ClienteChat;
-import observer.ServidorChat;
 
 /**
- *
- * @author IPET
+ * Clase ServidorLocal que hereda sus características de la clase ServidorChat
+ * @author SINFO
  */
 
 public class ServidorLocal extends ServidorChat{
+    
     @Override
-    public void recibirMensaje(String mensaje) {
-        System.out.println(mensaje.toString());
-      this.notificar(new MensajeLocal(mensaje));
+    public void recibirMensaje(String msj) {
+        System.out.println(msj);
+      this.notificar(new MensajeLocal(msj));
     }
 
     @Override
@@ -37,8 +28,8 @@ public class ServidorLocal extends ServidorChat{
     }
 
     @Override
-    public void enviarMensajeAll(String mensaje) {
-       this.notificar(new MensajeLocal(mensaje));
+    public void enviarMensajeAll(String msj) {
+       this.notificar(new MensajeLocal(msj));
     }
 
     @Override
