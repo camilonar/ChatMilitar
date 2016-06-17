@@ -1,49 +1,51 @@
-package Servidor;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package servidor;
+
+import cliente.*;
+import cliente.ClienteLocal;
 import cliente.IConexionCliente;
-import java.rmi.Naming;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
+import cliente.Mensaje;
+import cliente.MensajeLocal;
 import java.util.ArrayList;
+import observer.ClienteChat;
+import observer.ServidorChat;
 
-public class ServidorLocal extends UnicastRemoteObject implements IconexionServidor {
+/**
+ *
+ * @author IPET
+ */
 
-    protected ArrayList<IConexionCliente> clients = new ArrayList<IConexionCliente>();
-
-    public ServidorLocal() throws RemoteException {
+////ESTE ES UN SERVIDOR DE PRUEBA PARA PODER PROBAR SI EL CLIENTE FUNCIONA CORRECTAMENTE ATT:GRUPOCLIENTE
+public class ServidorLocal extends ServidorChat{
+    @Override
+    public void recibirMensaje(String mensaje) {
+        System.out.println(mensaje.toString());
+      this.notificar(new MensajeLocal(mensaje));
     }
 
-    public void login(IConexionCliente cliente, String userName) throws RemoteException {
-        enviarMensaje(">>> " + userName + " Está en el Grupo!!!", "");
-        clients.add(cliente);
+    @Override
+    public void addCliente(IConexionCliente c) {
+      this.asociarObservador((ClienteChat) c);
     }
 
-    public void enviarMensaje(String mensaje, String userName) throws RemoteException {
-        for (int i = 0; i < clients.size(); i++) {
-            IConexionCliente c = clients.get(i);
-            try {
-                c.getMensaje(mensaje, userName);
-            } catch (RemoteException e) {
-                salir(c);
-                i = i - 1;
-            }
-        }
-    }
-    public void salir(IConexionCliente cliente) {
-        clients.remove(cliente);
+    @Override
+    public void removerCliente(IConexionCliente c) {
+     this.retirarObservador((ClienteChat) c);
     }
 
-    public static void main(String[] args) {
-        try {
-            Naming.rebind("Server", new ServidorLocal());
-            System.out.println("Servidor listo --> OK");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void enviarMensajeAll(String mensaje) {
+       this.notificar(new MensajeLocal(mensaje));
     }
+
+    @Override
+    public void recibirConexiones() {
+     
+    }
+     
+    
 }
-
-    
-    
-    
-    
-

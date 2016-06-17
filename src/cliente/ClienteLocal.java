@@ -1,17 +1,70 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package cliente;
 
-import Interface.GUI;
+import GUICliente.GUICliente;
+import cliente.Mensaje;
 import cliente.IConexionCliente;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
+import observer.ClienteChat;
+import observer.ServidorChat;
+import servidor.ServidorLocal;
 
-public class ClienteLocal extends UnicastRemoteObject implements IConexionCliente {
+/**
+ *
+ * @author IPET
+ */
+public class ClienteLocal extends ClienteChat  {
+    private ServidorLocal servidor;
+    GUICliente guic ;
+    String nickname;
+    public ClienteLocal(String nickname) {
+        guic = new GUICliente();
+        guic.setVisible(true);
+        guic.setC(this);
+        this.nickname = nickname;
+        guic.setnicknamelabel(nickname);
+    }
+ 
+    
+    public ServidorLocal getServidor() {
+        return servidor;
+    }
 
-	
-	public ClienteLocal() throws RemoteException {
-	}
-	public void getMensaje(String mensaje, String userName) throws RemoteException {
-		GUI.showMensaje(mensaje, userName);
-	}
+    public void setServidor(ServidorLocal miservidor) {
+        this.servidor = miservidor;
+    }
+    
+    
+    @Override
+    public boolean conectar(String ip , int puerto) {
+        return true;
+    }
+
+    @Override
+    public boolean recibirMsj(Mensaje msj) {
+        System.out.println(msj);
+     return true;   
+    }
+
+  
+    @Override
+    public void desconectar() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean enviarMsj(Mensaje mensaje) {
+        servidor.recibirMensaje(nickname+": " +mensaje.toString());
+        return true;
+    }
+
+
+    @Override
+    public void actualizar(Mensaje m) {
+        guic.addMensaje(m.toString());
+    }
+
+   
 }

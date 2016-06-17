@@ -1,8 +1,17 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package cliente;
-import java.rmi.Remote;
-import java.rmi.RemoteException;
 
-public interface IConexionCliente extends Remote {
-	
-	public void getMensaje(String mensaje, String userName) throws RemoteException;
+/**
+ *
+ * @author IPET
+ */
+
+public interface IConexionCliente  {
+    public boolean conectar(String ip,int puerto);
+    public boolean recibirMsj(Mensaje msj );
+    public boolean enviarMsj(Mensaje msj);
+    public void desconectar();
 }
