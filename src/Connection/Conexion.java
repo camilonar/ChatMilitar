@@ -17,7 +17,7 @@ import java.rmi.RemoteException;
  * @author F1
  */
 public class Conexion {
-
+ ClienteLocal l ;
     private ClienteLocal client;
     private IconexionServidor server;
 
