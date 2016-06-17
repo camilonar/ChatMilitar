@@ -5,10 +5,7 @@
 package cliente;
 
 import GUICliente.GUICliente;
-import cliente.Mensaje;
-import cliente.IConexionCliente;
 import observer.ClienteChat;
-import observer.ServidorChat;
 import servidor.ServidorLocal;
 
 /**
