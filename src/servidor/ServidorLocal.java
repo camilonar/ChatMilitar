@@ -19,7 +19,6 @@ import observer.ServidorChat;
  * @author IPET
  */
 
-////ESTE ES UN SERVIDOR DE PRUEBA PARA PODER PROBAR SI EL CLIENTE FUNCIONA CORRECTAMENTE ATT:GRUPOCLIENTE
 public class ServidorLocal extends ServidorChat{
     @Override
     public void recibirMensaje(String mensaje) {
